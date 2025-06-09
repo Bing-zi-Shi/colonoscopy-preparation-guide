@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结肠镜检查准备指导 - 让您安心检查</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: #667eea;
+            border: 4px solid #fff;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .timeline-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .checklist-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .checklist-card {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .checklist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .checklist-title {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist-title::before {
+            content: "📋";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist li:hover {
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+            padding-left: 45px;
+        }
+        
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+            color: #667eea;
+            cursor: pointer;
+        }
+        
+        .checklist li.checked::before {
+            content: "✅";
+        }
+        
+        .checklist li.checked {
+            color: #28a745;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .video-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .video-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .video-info {
+            padding: 20px;
+            color: white;
+        }
+        
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .video-duration {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .tips-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .tip-card {
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .tip-card.warning {
+            background: linear-gradient(135deg, #ff9a56, #ff6b35);
+            color: white;
+        }
+        
+        .tip-card.success {
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            color: white;
+        }
+        
+        .tip-card.info {
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            color: white;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .emergency-contact {
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(229, 62, 62, 0.3);
+        }
+        
+        .contact-button {
+            background: white;
+            color: #e53e3e;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .progress-tracker {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .progress-step {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .progress-step.active {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .timeline::after {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item::after {
+                left: 10px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .checklist-grid,
+            .video-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 结肠镜检查准备指导</h1>
+            <p style="font-size: 1.2em; color: #666; margin-top: 15px;">
+                专业指导 · 贴心服务 · 让您安心检查
+            </p>
+            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; margin-top: 20px;">
+                <h3>📞 咨询热线：13038011303</h3>
+                <p>工作时间：周一至周五 8:00-17:30</p>
+            </div>
+        </div>
+
+        <!-- 准备时间轴 -->
+        <div class="timeline-container">
+            <h2 class="section-title">📅 检查准备时间轴</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">检查前3天</div>
+                        <h3>🥗 饮食调整期</h3>
+                        <ul style="margin-top: 15px;">
+                            <li>开始低纤维饮食</li>
+                            <li>避免粗粮、蔬菜、水果</li>
+                            <li>可以吃白米粥、面条、蛋糕等</li>
+                            <li>停止服用含铁药物</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">检查前2天</div>
+                        <h3>🍵 清淡饮食期</h3>
+                        <ul style="margin-top: 15px;">
+                            <li>继续低纤维饮食</li>
+                            <li>多喝水，保持充足水分</li>
+                            <li>避免红色、紫色食物</li>
+                            <li>准备清肠药物</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">检查前1天</div>
+                        <h3>💊 清肠准备期</h3>
+                        <ul style="margin-top: 15px;">
+                            <li>早餐：清淡流质食物</li>
+                            <li>午餐后开始禁食</li>
+                            <li>下午开始服用清肠药</li>
+                            <li>大量饮水辅助清肠</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">检查当天</div>
+                        <h3>🏥 检查准备期</h3>
+                        <ul style="margin-top: 15px;">
+                            <li>继续禁食</li>
+                            <li>提前2小时到达医院</li>
+                            <li>完成最后清肠步骤</li>
+                            <li>配合医护人员检查</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 详细检查清单 -->
+        <div class="checklist-section">
+            <h2 class="section-title">📋 详细准备清单</h2>
+            
+            <div class="checklist-grid">
+                <div class="checklist-card">
+                    <div class="checklist-title">检查前3天准备</div>
+                    <ul class="checklist">
+                        <li onclick="toggleCheck(this)">停止服用含铁剂、维生素C等补充剂</li>
+                        <li onclick="toggleCheck(this)">开始低纤维、少渣饮食</li>
+                        <li onclick="toggleCheck(this)">避免吃坚果、种子类食物</li>
+                        <li onclick="toggleCheck(this)">停止服用止泻药物</li>
+                        <li onclick="toggleCheck(this)">准备检查当天的陪同人员</li>
+                        <li onclick="toggleCheck(this)">确认检查时间和地点</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-card">
+                    <div class="checklist-title">检查前1天准备</div>
+                    <ul class="checklist">
+                        <li onclick="toggleCheck(this)">早餐吃清淡流质食物</li>
+                        <li onclick="toggleCheck(this)">中午12点后开始禁食</li>
+                        <li onclick="toggleCheck(this)">按医嘱服用清肠药物</li>
+                        <li onclick="toggleCheck(this)">大量饮用清水</li>
+                        <li onclick="toggleCheck(this)">准备宽松舒适的衣物</li>
+                        <li onclick="toggleCheck(this)">早点休息，保证睡眠</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-card">
+                    <div class="checklist-title">检查当天准备</div>
+                    <ul class="checklist">
+                        <li onclick="toggleCheck(this)">继续禁食，可少量饮水</li>
+                        <li onclick="toggleCheck(this)">携带身份证、医保卡</li>
+                        <li onclick="toggleCheck(this)">携带既往检查资料</li>
+                        <li onclick="toggleCheck(this)">穿着宽松、易脱换的衣服</li>
+                        <li onclick="toggleCheck(this)">移除金属饰品</li>
+                        <li onclick="toggleCheck(this)">提前2小时到达医院</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-card">
+                    <div class="checklist-title">心理准备事项</div>
+                    <ul class="checklist">
+                        <li onclick="toggleCheck(this)">了解检查流程，消除恐惧</li>
+                        <li onclick="toggleCheck(this)">与医生充分沟通</li>
+                        <li onclick="toggleCheck(this)">准备娱乐物品（等待时用）</li>
+                        <li onclick="toggleCheck(this)">安排好工作和家庭事务</li>
+                        <li onclick="toggleCheck(this)">保持积极乐观的心态</li>
+                        <li onclick="toggleCheck(this)">相信医疗团队的专业性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 准备进度跟踪 -->
+        <div class="progress-tracker">
+            <h2 class="section-title">📊 准备进度跟踪</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-steps">
+                <div class="progress-step">饮食调整</div>
+                <div class="progress-step">药物准备</div>
+                <div class="progress-step">清肠过程</div>
+                <div class="progress-step">检查当天</div>
+                <div class="progress-step">检查完成</div>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #666;">
+                当前进度：<span id="progressText">0%</span> - 
+                <span id="progressStatus">准备开始</span>
+            </p>
+        </div>
+
+        <!-- 视频指导 -->
+        <div class="video-section">
+            <h2 class="section-title">📺 视频指导教程</h2>
+            
+            <div style="background: #fff3cd; padding: 20px; border-radius: 15px; margin-bottom: 25px; text-align: center;">
+                <h3>💡 关于视频内容</h3>
+                <p>点击下方视频卡片可查看详细的文字版指导内容。<br>
+                真实视频教程请扫描二维码关注我们的微信公众号观看。</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('preparation')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">🥗 检查前饮食指导</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>详细介绍检查前3天的饮食注意事项，包括可以吃什么、不能吃什么，如何科学安排饮食。</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('bowel-prep')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">💊 清肠药物使用方法</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>手把手教您如何正确服用清肠药物，包括用量、时间、注意事项等详细步骤。</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('procedure')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">🔬 检查流程全解析</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>带您了解结肠镜检查的完整流程，消除心理顾虑，让您安心接受检查。</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('psychology')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">🧘 心理准备与放松技巧</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>专业心理医生指导，教您如何调节情绪，掌握放松技巧，以最佳状态接受检查。</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('aftercare')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">🏥 检查后注意事项</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>检查结束后的注意事项，包括饮食恢复、活动安排、复查时间等重要信息。</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('faq')">
+                        📖
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">❓ 常见问题解答</div>
+                        <div class="video-duration">📖 详细图文</div>
+                        <p>汇总患者最关心的问题，专家一一解答，让您对检查过程了如指掌。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 25px; border-radius: 15px; margin-top: 25px; text-align: center;">
+                <h3>📱 完整视频教程</h3>
+                <p>扫描下方二维码关注微信公众号<br>观看完整的视频指导教程</p>
+                <div style="width: 120px; height: 120px; background: rgba(255,255,255,0.2); margin: 15px auto; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2em;">
+                    📱
+                </div>
+                <p style="font-size: 1.1em; font-weight: bold; margin-top: 10px;">微信搜索：健筛通</p>
+                <p style="font-size: 0.9em; opacity: 0.9;">专业的健康筛查指导平台</p>
+            </div>
+        </div>
+
+        <!-- 重要提醒 -->
+        <div class="tips-section">
+            <h2 class="section-title">⚠️ 重要提醒事项</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card warning">
+                    <div class="tip-icon">🚫</div>
+                    <h3>绝对禁止事项</h3>
+                    <ul style="margin-top: 15px;">
+                        <li>检查前8小时内禁食</li>
+                        <li>检查前2小时内禁水</li>
+                        <li>不能服用影响凝血的药物</li>
+                        <li>不能佩戴金属物品</li>
+                        <li>不能化妆或涂指甲油</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card success">
+                    <div class="tip-icon">✅</div>
+                    <h3>必须携带物品</h3>
+                    <ul style="margin-top: 15px;">
+                        <li>身份证原件</li>
+                        <li>医保卡或农合卡</li>
+                        <li>既往检查资料</li>
+                        <li>药物过敏史记录</li>
+                        <li>陪同人员联系方式</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card info">
+                    <div class="tip-icon">💡</div>
+                    <h3>贴心小建议</h3>
+                    <ul style="margin-top: 15px;">
+                        <li>穿前开扣或宽松的衣服</li>
+                        <li>带本书或手机充电器</li>
+                        <li>安排好当天的工作</li>
+                        <li>提前了解医院位置</li>
+                        <li>保持愉快的心情</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 紧急联系 -->
+        <div class="emergency-contact">
+            <h2 style="margin-bottom: 20px;">📞 遇到问题？联系我们！</h2>
+            <p style="font-size: 1.1em; margin-bottom: 25px;">
+                准备过程中有任何疑问或不适，请及时联系医护人员
+            </p>
+            <div style="font-size: 1.5em; margin: 20px 0;">
+                <strong>13038011303</strong>
+            </div>
+            <p style="opacity: 0.9;">工作时间：周一至周五 8:00-17:30</p>
+            <button class="contact-button" onclick="window.open('tel:13038011303')">📞 立即拨打</button>
+            <button class="contact-button" onclick="contact('wechat')">💬 微信咨询</button>
+            <button class="contact-button" onclick="contact('emergency')">🚨 紧急情况</button>
+        </div>
+    </div>
+
+    <script>
+        // 切换检查清单项目
+        function toggleCheck(item) {
+            item.classList.toggle('checked');
+            updateProgress();
+        }
+
+        // 更新准备进度
+        function updateProgress() {
+            const allItems = document.querySelectorAll('.checklist li');
+            const checkedItems = document.querySelectorAll('.checklist li.checked');
+            const progress = (checkedItems.length / allItems.length) * 100;
+            
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+            
+            // 更新进度状态
+            const progressStatus = document.getElementById('progressStatus');
+            const steps = document.querySelectorAll('.progress-step');
+            
+            // 清除所有活动状态
+            steps.forEach(step => step.classList.remove('active'));
+            
+            if (progress === 0) {
+                progressStatus.textContent = '准备开始';
+                steps[0].classList.add('active');
+            } else if (progress <= 25) {
+                progressStatus.textContent = '饮食调整中';
+                steps[0].classList.add('active');
+            } else if (progress <= 50) {
+                progressStatus.textContent = '药物准备中';
+                steps[1].classList.add('active');
